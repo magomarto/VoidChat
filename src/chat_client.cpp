@@ -7,17 +7,18 @@ ChatClient::ChatClient() {
 }
 
 void ChatClient::run() {
-    Interface ui; // Cria uma instância da interface
+    Interface ui; 
+    ui.displayAsciiArt(); // Exibe a arte ASCII
     ui.showWelcomeMessage();
 
     std::string message;
     while (true) {
-        message = ui.getUserInput(); // input do usuário
+        message = ui.getUserInput();
         if (message.empty()) {
-            continue; // Ignora mensagens vazias
+            continue;
         }
-        sendMessage(message); 
-        receiveMessages(); 
+        sendMessage(message);
+        receiveMessages();
     }
 }
 

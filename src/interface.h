@@ -3,11 +3,13 @@
 
 #include <string>
 
+#include <string>
+
 class Interface {
 public:
-    void displayMessage(const std::string& message);
-    std::string getUserInput();
+    void displayAsciiArt(); 
     void showWelcomeMessage();
+    std::string getUserInput();
 };
 
 #endif // INTERFACE_H

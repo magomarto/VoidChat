@@ -1,16 +1,27 @@
 #include "interface.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 
-void Interface::displayMessage(const std::string& message) {
-    std::cout << message << std::endl;
+void Interface::displayAsciiArt() {
+    std::ifstream artFile("../src/ascii_art.txt");
+    if (!artFile) {
+        std::cerr << "Error: Could not open ascii_art.txt" << std::endl;
+        return;
+    }
+    
+    std::string line;
+    while (std::getline(artFile, line)) {
+        std::cout << line << std::endl;
+    }
+}
+
+void Interface::showWelcomeMessage() {
+    std::cout << "Hello Friend...Welcome to the void" << std::endl;
 }
 
 std::string Interface::getUserInput() {
     std::string input;
     std::getline(std::cin, input);
     return input;
-}
-
-void Interface::showWelcomeMessage() {
-    displayMessage("Welcome to VoidChat! Type your message below:");
 }
