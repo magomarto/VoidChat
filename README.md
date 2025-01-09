@@ -3,5 +3,5 @@ VoidChat is a terminal-based real-time chat, which uses encryption to ensure the
 
 
 ## Features 
-
+IN DEV
 ## Dependencies
